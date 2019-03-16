@@ -1,0 +1,36 @@
+{
+  "name": "try-private-method",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify src/main.js -o index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "plugins": [
+            "@babel/plugin-proposal-class-properties",
+            "@babel/plugin-proposal-private-methods"
+          ],
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
+  },
+  "author": "kikei",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-private-methods": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3"
+  }
+}
